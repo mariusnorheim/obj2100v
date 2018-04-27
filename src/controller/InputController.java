@@ -1,4 +1,4 @@
-package gui;
+package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -10,10 +10,10 @@ import java.io.PrintWriter;
 import javax.swing.JTextPane;
 //import model.processbuilderstrategy.StockfishProcess;
 
-public class InputPane extends JTextPane {
+public class InputController extends JTextPane {
 	  private PrintWriter pw;
 	  
-	  public InputPane()
+	  public InputController()
 	  {
 	    DebugWindow responses = new DebugWindow("responses");
 	    try
