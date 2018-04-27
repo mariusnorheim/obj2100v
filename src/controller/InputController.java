@@ -1,4 +1,4 @@
-package gui;
+package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -8,21 +8,23 @@ import java.io.PipedReader;
 import java.io.PipedWriter;
 import java.io.PrintWriter;
 import javax.swing.JTextPane;
-//import model.processbuilderstrategy.StockfishProcess;
+import view.OutputView;
+import controller.InputController;
+import model.commandbuilderstrategy.StockfishProcess;
 
-public class InputPane extends JTextPane {
+public class InputController extends JTextPane {
 	  private PrintWriter pw;
 	  
-	  public InputPane()
+	  public InputController()
 	  {
-	    DebugWindow responses = new DebugWindow("responses");
+	    OutputView output = new OutputView("output");
 	    try
 	    {
 	      PipedWriter pipedwriter;
 	      BufferedReader reader = new BufferedReader(new PipedReader(pipedwriter = new PipedWriter()));
 	      this.pw = new PrintWriter(pipedwriter);
 	      StockfishProcess stockfish = new StockfishProcess(reader);
-	      stockfish.addObserver(responses);
+	      stockfish.addObserver(output);
 	    }
 	    catch (IOException e1)
 	    {
@@ -33,7 +35,7 @@ public class InputPane extends JTextPane {
 	      public void keyTyped(KeyEvent e)
 	      {
 	        if (e.getKeyChar() == '\n') {
-	          Inputpane.this.talkToStockfish();
+	          InputController.this.talkToStockfish();
 	        }
 	      }
 	      
