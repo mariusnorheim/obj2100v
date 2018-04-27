@@ -1,18 +1,19 @@
-package gui;
+package view;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-public class InputWindow extends JFrame {
-	  private Inputpane inputpane;
+//import controller.InputController;
+
+public class InputView {
+	  private InputController inputcontroller;
 	  
-	  public InputToStockfish()
+	  public InputView()
 	  {
 	    setTitle("input to engine");
-	    add(new JScrollPane(this.inputpane = new Inputpane()));
+	    add(new JScrollPane(this.inputcontroller = new InputController()));
 	    add(new JButton(new AbstractAction("stop")
 	    {
 	      public void actionPerformed(ActionEvent e)
