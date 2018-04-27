@@ -1,4 +1,4 @@
-package gui;
+package view;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -9,14 +9,14 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 //import model.Messagetype;
 
-public class OutputWindow extends JFrame implements Observer {
+public class OutputView extends JFrame implements Observer {
 	  private static final int W = 500;
 	  private JTextPane p = new JTextPane();
 	  private int messagecount;
 	  static int count = 0;
 	  private StyleToggler styleToggler = new StyleToggler();
 	  
-	  public DebugWindow(String title)
+	  public OutputView(String title)
 	  {
 	    setTitle(title);
 	    add(new JScrollPane(this.p));
