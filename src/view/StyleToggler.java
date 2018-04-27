@@ -12,8 +12,8 @@ public class StyleToggler extends SimpleAttributeSet
   
   public StyleToggler()
   {
-    this.sets[0] = new SimpleAttributeSet();
-    this.sets[1] = new SimpleAttributeSet();
+    this.sets[0] = new SimpleAttributeSet() {};
+    this.sets[1] = new SimpleAttributeSet() {};
   }
   
   public AttributeSet next()
