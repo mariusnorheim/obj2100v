@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # IntelliJ files
-idea/*
+.idea/*
 obj2100v.iml
 
 
