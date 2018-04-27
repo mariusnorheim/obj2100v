@@ -7,7 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
-//import model.Messagetype;
+import model.Messagetype;
 
 public class OutputView extends JFrame implements Observer {
 	  private static final int W = 500;
@@ -43,6 +43,6 @@ public class OutputView extends JFrame implements Observer {
 	  {
 	    Messagetype m = (Messagetype)arg;
 	    write(" #" + ++this.messagecount + " " + m.getType());
-	    write(m.getMsg() + "\n --------------");
+	    write(m.getMessage() + "\n --------------");
 	  }
 }
