@@ -23,9 +23,9 @@ public class Messagetype
     this.message = message.toString();
   }
   
-  public Messagetype(String mtype, String msg)
+  public Messagetype(String mtype, String message)
   {
     this.mtype = mtype;
-    this.message = msg;
+    this.message = message;
   }
 }
