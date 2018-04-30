@@ -2,44 +2,37 @@ package model.socket;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class SocketClient implements Runnable {
     private String host;
     private int port;
     private Socket socket;
-    private ObjectInputStream ois;
     private ObjectOutputStream oos;
-    //PlayBoard board;
 
-    public SocketClient(String host, int port) throws IOException {
+    public SocketClient(String host, int port) {
         this.host = host;
         this.port = port;
-        //board = new PlayBoard();
     }
 
     @Override
     public void run() {
         try {
+            // Create the socket
             this.socket = new Socket(host, port);
-            this.oos = new ObjectOutputStream(this.socket.getOutputStream());
-            this.ois = new ObjectInputStream(this.socket.getInputStream());
+            // Create output stream to the server
+            this.oos = new ObjectOutputStream(socket.getOutputStream());
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-            while (socket.isConnected()) {
-                // Do stuff
-            }
-        } catch (UnknownHostException e) {
+    public void newMove(String move) {
+        try {
+            // Send object to server
+            SocketMessage msg = new SocketMessage("move", move);
+            oos.writeObject(msg);
+        } catch(IOException e) {
             e.printStackTrace();
-            System.exit(1);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        } finally {
-            try {
-                socket.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
         }
     }
 }
