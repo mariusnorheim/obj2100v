@@ -10,6 +10,11 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# IntelliJ files
+.idea/*
+obj2100v.iml
+
+
 # Package Files #
 *.jar
 *.war
@@ -18,3 +23,4 @@
 *.zip
 *.tar.gz
 *.rar
+/bin/
