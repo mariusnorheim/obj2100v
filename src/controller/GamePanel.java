@@ -7,7 +7,7 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 
 public class GamePanel extends JPanel {
-    static final int BOXSIZE = 80;
+    public static final int BOXSIZE = 80;
     private Game game;
     private Box highlighted;
     String fen = "";
