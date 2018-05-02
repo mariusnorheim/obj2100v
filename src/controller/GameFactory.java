@@ -1,3 +1,4 @@
+package controller;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -6,8 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GameFactory {
-
-    public static Game getTwoPlayerChessGame() {
+	public static Game getTwoPlayerChessGame() {
         HashMap<Point, Box> board = new HashMap<>();
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -60,7 +60,7 @@ public class GameFactory {
         Point cur = new Point(3, 0);
 
         int size = GamePanel.BOXSIZE / 3;
-
+        
 
         Bonde p = new Konge(Color.BLACK);
 
@@ -347,6 +347,8 @@ public class GameFactory {
         curX = cur.x * GamePanel.BOXSIZE + GamePanel.BOXSIZE / 3;
         curY = cur.y * GamePanel.BOXSIZE + GamePanel.BOXSIZE / 3;
 
+        
+        
         a = new Polygon(løperX, løperY, løperX.length);
         transform = new AffineTransform();
         transform.translate(curX, curY);
@@ -461,5 +463,8 @@ public class GameFactory {
         newGame.setBoard(newBoard);
         newGame.setPlayers(players);
         return newGame;
+        
+        
+        
     }
 }

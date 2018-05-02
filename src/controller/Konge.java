@@ -1,3 +1,5 @@
+package controller;
+
 import java.awt.*;
 
 public class Konge extends Bonde {
