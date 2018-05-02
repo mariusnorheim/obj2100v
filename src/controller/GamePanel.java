@@ -6,11 +6,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 
-
 public class GamePanel extends JPanel {
     static final int BOXSIZE = 80;
     private Game game;
     private Box highlighted;
+    String fen = "";
 
     public GamePanel() throws HeadlessException {
         this.game = GameFactory.getTwoPlayerChessGame();
@@ -18,7 +18,6 @@ public class GamePanel extends JPanel {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-
 
                 game.getBoard().getBoard().forEach((p, b) -> {
                     Point pos = mouseEvent.getPoint();
@@ -43,7 +42,17 @@ public class GamePanel extends JPanel {
 
                             }
                         }else {
-                            System.out.println(pos.toString());
+                            
+                            int x = (int)pos.getX();
+                        	int y = (int)pos.getY();
+                        	
+                        	// omgjør point to fen kode og skriver den ut. 
+                        	// forløbig bare på første klikk.
+                        	PointToFen fen = new PointToFen();
+                        	fen.setPointToFen(x, y);
+                        	
+                    		//System.out.print(fen);
+                            
                             if(b.getSpillebrikke() != null){
                                 highlighted = b;
                             }
@@ -58,10 +67,11 @@ public class GamePanel extends JPanel {
             }
 
             @Override
-            public void mousePressed(MouseEvent mouseEvent) {
-
+            public void mousePressed(MouseEvent mouseEvent) {	
+            	
             }
 
+            
             @Override
             public void mouseReleased(MouseEvent mouseEvent) {
 
