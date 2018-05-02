@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Box {
     private Point pos;
-    private Bonde Bonde;
+    private Spillebrikke Spillebrikke;
     private Color color;
 
     public Point getPos() {
@@ -15,12 +15,12 @@ public class Box {
         this.pos = pos;
     }
 
-    public Bonde getBonde() {
-        return Bonde;
+    public Spillebrikke getSpillebrikke() {
+        return Spillebrikke;
     }
 
-    public void setBonde(Bonde Bonde) {
-        this.Bonde = Bonde;
+    public void setSpillebrikke(Spillebrikke Spillebrikke) {
+        this.Spillebrikke = Spillebrikke;
     }
 
     public Box(Point pos, Color color) {

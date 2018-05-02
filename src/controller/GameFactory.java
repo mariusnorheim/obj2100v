@@ -54,7 +54,7 @@ public class GameFactory {
          int tårnX[]={ 5, 8, 8, 5, 5, 9, 9,13,13,17,17,21,21,25,25,22,22,25};
          int tårnY[]={30,24,17,11, 6, 6, 9, 9, 6, 6, 9, 9, 6, 6,11,17,24,30};
 
-        Set<Bonde> allBondes = new HashSet<>();
+        Set<Spillebrikke> alleSpillebrikker = new HashSet<>();
 
 
         Point cur = new Point(3, 0);
@@ -62,7 +62,7 @@ public class GameFactory {
         int size = GamePanel.BOXSIZE / 3;
         
 
-        Bonde p = new Konge(Color.BLACK);
+        Spillebrikke p = new Konge(Color.BLACK);
 
         int curX = cur.x * GamePanel.BOXSIZE + GamePanel.BOXSIZE / 3;
         int curY = cur.y * GamePanel.BOXSIZE + GamePanel.BOXSIZE / 3;
@@ -74,9 +74,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
         cur = new Point(3, 7);
@@ -95,9 +95,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
 
@@ -119,9 +119,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
         cur = new Point(4, 0);
@@ -140,9 +140,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
 
@@ -163,9 +163,9 @@ public class GameFactory {
             a = transform.createTransformedShape(a);
 
             p.setGfx(a);
-            board.get(cur).setBonde(p);
+            board.get(cur).setSpillebrikke(p);
             p.setActive(true);
-            allBondes.add(p);
+            alleSpillebrikker.add(p);
 
         }
 
@@ -184,9 +184,9 @@ public class GameFactory {
             a = transform.createTransformedShape(a);
 
             p.setGfx(a);
-            board.get(cur).setBonde(p);
+            board.get(cur).setSpillebrikke(p);
             p.setActive(true);
-            allBondes.add(p);
+            alleSpillebrikker.add(p);
         }
 
 
@@ -204,9 +204,9 @@ public class GameFactory {
             a = transform.createTransformedShape(a);
 
             p.setGfx(a);
-            board.get(cur).setBonde(p);
+            board.get(cur).setSpillebrikke(p);
             p.setActive(true);
-            allBondes.add(p);
+            alleSpillebrikker.add(p);
 
 
         cur = new Point(7, 0);
@@ -223,9 +223,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
         cur = new Point(7, 7);
         p = new Tårn(Color.WHITE);
@@ -241,9 +241,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
         cur = new Point(0, 7);
@@ -260,9 +260,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
 
@@ -280,9 +280,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
         cur = new Point(5, 7);
         p = new Tårn(Color.WHITE);
@@ -298,9 +298,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
 
@@ -318,9 +318,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
         cur = new Point(2, 0);
         p = new Løper(Color.BLACK);
@@ -336,9 +336,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
         cur = new Point(5, 0);
@@ -357,9 +357,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
         cur = new Point(1, 0);
@@ -376,9 +376,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
         cur = new Point(6, 0);
         p = new Springer(Color.BLACK);
@@ -394,9 +394,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
         cur = new Point(1, 7);
@@ -413,9 +413,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
         cur = new Point(6, 7);
         p = new Springer(Color.WHITE);
@@ -431,9 +431,9 @@ public class GameFactory {
         a = transform.createTransformedShape(a);
 
         p.setGfx(a);
-        board.get(cur).setBonde(p);
+        board.get(cur).setSpillebrikke(p);
         p.setActive(true);
-        allBondes.add(p);
+        alleSpillebrikker.add(p);
 
 
 
@@ -443,10 +443,10 @@ public class GameFactory {
         player1.setColor(Color.WHITE);
         player2.setColor(Color.BLACK);
 
-        player1.setBondes(allBondes.stream().filter(Bonde -> Bonde.getColor() == Color.WHITE).collect(Collectors.toSet()));
+        player1.setSpillebrikke(alleSpillebrikker.stream().filter(Spillebrikke -> Spillebrikke.getColor() == Color.WHITE).collect(Collectors.toSet()));
 
 
-        player2.setBondes(allBondes.stream().filter(Bonde -> Bonde.getColor() == Color.BLACK).collect(Collectors.toSet()));
+        player2.setSpillebrikke(alleSpillebrikker.stream().filter(Spillebrikke -> Spillebrikke.getColor() == Color.BLACK).collect(Collectors.toSet()));
 
         List<Player> players = new ArrayList<>();
         players.add(player1);
@@ -457,7 +457,7 @@ public class GameFactory {
         newBoard.setBoard(board);
         newBoard.setHeight(8);
         newBoard.setWidth(8);
-        newBoard.setPieces(allBondes);
+        newBoard.setPieces(alleSpillebrikker);
 
         Game newGame = new Game();
         newGame.setBoard(newBoard);
