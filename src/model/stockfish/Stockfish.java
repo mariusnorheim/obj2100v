@@ -25,5 +25,24 @@ class Stockfish {
             e.printStackTrace();
         }
     }
+    public void sendCommand(String command) {
+		try {
+			processWriter.write(command + "\n");
+			processWriter.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    public void stopEngine() {
+		
+		try {
+			sendCommand("quit");
+			processReader.close();
+			processWriter.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 }
