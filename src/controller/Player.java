@@ -1,16 +1,18 @@
+package controller;
+
 import java.awt.*;
 import java.util.Set;
 
 public class Player {
-    private Set<Bonde> Bondes;
+    private Set<Spillebrikke> Spillebrikke;
     private Color color;
 
-    public Set<Bonde> getBondes() {
-        return Bondes;
+    public Set<Spillebrikke> getSpillebrikke() {
+        return Spillebrikke;
     }
 
-    public void setBondes(Set<Bonde> Bondes) {
-        this.Bondes = Bondes;
+    public void setSpillebrikke(Set<Spillebrikke> Spillebrikke) {
+        this.Spillebrikke = Spillebrikke;
     }
 
     public Color getColor() {

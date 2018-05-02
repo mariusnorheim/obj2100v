@@ -1,3 +1,5 @@
+package controller;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Set;
@@ -5,7 +7,7 @@ import java.util.Set;
 public class Board {
     private int width;
     private int height;
-    private Set<Bonde> pieces;
+    private Set<Spillebrikke> pieces;
     private HashMap<Point,Box> board;
 
     public int getWidth() {
@@ -24,11 +26,11 @@ public class Board {
         this.height = height;
     }
 
-    public Set<Bonde> getPieces() {
+    public Set<Spillebrikke> getPieces() {
         return pieces;
     }
 
-    public void setPieces(Set<Bonde> pieces) {
+    public void setPieces(Set<Spillebrikke> pieces) {
         this.pieces = pieces;
     }
 

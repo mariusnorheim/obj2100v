@@ -1,6 +1,8 @@
+package controller;
+
 import java.awt.*;
 
-public class Dronning extends Bonde {
+public class Dronning extends Spillebrikke {
     public Dronning(Color color) {
         super(color);
     }

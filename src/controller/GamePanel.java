@@ -1,3 +1,5 @@
+package controller;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -24,25 +26,25 @@ public class GamePanel extends JPanel {
                     if (pos.x == b.getPos().x && pos.y == b.getPos().y) {
 
                         if(highlighted != null){
-                            if(b.getBonde() == null){
+                            if(b.getSpillebrikke() == null){
 
-                                Bonde BondeToMove = highlighted.getBonde();
-                                Shape BondeToMoveGFX =  BondeToMove.getGfx();
+                                Spillebrikke SpillebrikkeToMove = highlighted.getSpillebrikke();
+                                Shape SpillebrikkeToMoveGFX =  SpillebrikkeToMove.getGfx();
                                 AffineTransform transform = new AffineTransform();
-                                transform.translate(-BondeToMoveGFX.getBounds().x,-BondeToMoveGFX.getBounds().y);
+                                transform.translate(-SpillebrikkeToMoveGFX.getBounds().x,-SpillebrikkeToMoveGFX.getBounds().y);
                                 transform.translate(pos.x * GamePanel.BOXSIZE + GamePanel.BOXSIZE/3,pos.y * GamePanel.BOXSIZE + GamePanel.BOXSIZE/3);
-                                BondeToMoveGFX = transform.createTransformedShape(BondeToMoveGFX);
+                                SpillebrikkeToMoveGFX = transform.createTransformedShape(SpillebrikkeToMoveGFX);
 
-                                BondeToMove.setGfx(BondeToMoveGFX);
-                                b.setBonde(BondeToMove);
-                                highlighted.setBonde(null);
+                                SpillebrikkeToMove.setGfx(SpillebrikkeToMoveGFX);
+                                b.setSpillebrikke(SpillebrikkeToMove);
+                                highlighted.setSpillebrikke(null);
                                 highlighted = null;
 
 
                             }
                         }else {
                             System.out.println(pos.toString());
-                            if(b.getBonde() != null){
+                            if(b.getSpillebrikke() != null){
                                 highlighted = b;
                             }
 
@@ -90,27 +92,27 @@ public class GamePanel extends JPanel {
             graphics.setColor(box.getColor());
             graphics.fillRect(boxpos.x * BOXSIZE, boxpos.y * BOXSIZE, BOXSIZE, BOXSIZE);
 
-            if (box.getBonde() == null) {
+            if (box.getSpillebrikke() == null) {
                 return;
             }
 
 
-            if(box.getBonde().getColor() == Color.WHITE){
+            if(box.getSpillebrikke().getColor() == Color.WHITE){
                 graphics.setColor(Color.BLACK);
                 Stroke old = graphics.getStroke();
                 graphics.setStroke(new BasicStroke(5));
-                graphics.draw(box.getBonde().getGfx());
+                graphics.draw(box.getSpillebrikke().getGfx());
                 graphics.setStroke(old);
-                graphics.setColor(box.getBonde().getColor());
-                graphics.fill(box.getBonde().getGfx());
-            }else if(box.getBonde().getColor() == Color.BLACK){
+                graphics.setColor(box.getSpillebrikke().getColor());
+                graphics.fill(box.getSpillebrikke().getGfx());
+            }else if(box.getSpillebrikke().getColor() == Color.BLACK){
                 graphics.setColor(Color.WHITE);
                 Stroke old = graphics.getStroke();
                 graphics.setStroke(new BasicStroke(5));
-                graphics.draw(box.getBonde().getGfx());
+                graphics.draw(box.getSpillebrikke().getGfx());
                 graphics.setStroke(old);
-                graphics.setColor(box.getBonde().getColor());
-                graphics.fill(box.getBonde().getGfx());
+                graphics.setColor(box.getSpillebrikke().getColor());
+                graphics.fill(box.getSpillebrikke().getGfx());
             }
 
 
