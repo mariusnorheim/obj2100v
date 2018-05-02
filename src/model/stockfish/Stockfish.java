@@ -25,9 +25,11 @@ class Stockfish {
             e.printStackTrace();
         }
     }
-    public void sendCommand(String command) {
+
+    /*
+    public void sendCommand(String history, String move) {
 		try {
-			processWriter.write(command + "\n");
+			processWriter.write("position startpos moves " + history + " " + move + "\n");
 			processWriter.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -42,7 +44,7 @@ class Stockfish {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
+	*/
 
 }
