@@ -22,7 +22,7 @@ public class ClientThread extends SuperStrategy  {
 		}
 	}
 	
-	public void talkToStockfish(String history, String move) {
+	public void talkToStockfish(String command) {
 
 		try {
 			// stockfish answers

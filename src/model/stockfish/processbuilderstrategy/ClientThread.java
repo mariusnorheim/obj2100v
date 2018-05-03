@@ -27,22 +27,13 @@ public class ClientThread extends SuperStrategy  {
 	}
 	
 	
-	protected void talkToStockfish(String history, String move) {
+	protected void talkToStockfish(String command) {
 		try {
 			// Stockfish gets move
-			if(history.equals("")) {
-				System.out.println("Attempting to registering move: " + move);
-				processWriter.write("position startpos moves " + move + "\n");
-				processWriter.flush();
-				processWriter.write("isready\n");
-				processWriter.flush();
-			} else {
-				System.out.println("Attempting to registering move: " + history + " " + move);
-				processWriter.write("position startpos moves " + history + " " + move + "\n");
-				processWriter.flush();
-				processWriter.write("isready\n");
-				processWriter.flush();
-			}
+			processWriter.write("position startpos moves " + command + "\n");
+			processWriter.flush();
+			processWriter.write("isready\n");
+			processWriter.flush();
 
 			// Nothing to display here
 			String l = "";

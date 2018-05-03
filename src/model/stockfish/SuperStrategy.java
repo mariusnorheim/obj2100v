@@ -20,18 +20,9 @@ public abstract class SuperStrategy extends Thread {
 		String move;
 		try {
 			while ((command = commandReader.readLine()) != null) {
-				history = command.split(" ");
-				move = history[history.length-1];
-
 				if (!command.isEmpty()) {
-					System.out.println(history.length);
+					talkToStockfish(command);
 
-					if(firstmove) {
-						talkToStockfish("", move);
-						firstmove = false;
-					} else {
-						talkToStockfish(history[0], move);
-					}
 				}
 				else System.out.println("command was empty, was not sent to stockfish");
 				System.out.println("Command #" + ++count + " [" + command + "] length " + command.length());
@@ -41,6 +32,5 @@ public abstract class SuperStrategy extends Thread {
 		}				
 	}
 
-	abstract protected void talkToStockfish(String history, String move);
-	
+	abstract protected void talkToStockfish(String command);
 }
