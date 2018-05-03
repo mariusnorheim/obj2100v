@@ -31,10 +31,10 @@ public class SocketServer implements Runnable {
                 // Create output and input stream to the client
                 this.ois = new ObjectInputStream(clientSocket.getInputStream());
                 this.oos = new ObjectOutputStream(clientSocket.getOutputStream());
-
-                this.getMove();
             }
         } catch(IOException e) {
+            e.printStackTrace();
+        } catch(ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -42,8 +42,7 @@ public class SocketServer implements Runnable {
     public void getMove() {
         try {
             // Read object from server
-            Messagetype msg = (Messagetype) this.ois.readObject();
-            String move = msg.getMsg();
+            String move = (String) ois.readObject();
             System.out.println("New move is: " + move);
         } catch(IOException e) {
             e.printStackTrace();

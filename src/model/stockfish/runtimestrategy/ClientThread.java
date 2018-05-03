@@ -3,10 +3,7 @@ package model.stockfish.runtimestrategy;
 import model.Messagetype;
 import model.stockfish.SuperStrategy;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 public class ClientThread extends SuperStrategy  {
 
@@ -35,6 +32,7 @@ public class ClientThread extends SuperStrategy  {
 				result += l + "\n";
 			}
 			stockfishProcess.update(new Messagetype("result", result));
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

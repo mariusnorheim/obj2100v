@@ -24,18 +24,18 @@ public class SocketClient implements Runnable {
             // Create the socket
             this.socket = new Socket(host, port);
             // Create output and input stream to the server
-            this.oos = new ObjectOutputStream(socket.getOutputStream());
-            this.ois = new ObjectInputStream(socket.getInputStream());
+            this.oos = new ObjectOutputStream(this.socket.getOutputStream());
+            this.ois = new ObjectInputStream(this.socket.getInputStream());
         } catch(IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void sendMove(String newmove) {
+    public void sendMove(String move) {
         try {
             // Send object to server
-            Messagetype msg = new Messagetype("move", newmove);
-            this.oos.writeObject(msg);
+            Messagetype msg = new Messagetype("move", move);
+            oos.writeObject(msg);
         } catch(IOException e) {
             e.printStackTrace();
         }

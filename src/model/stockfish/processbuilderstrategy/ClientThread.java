@@ -1,6 +1,7 @@
 package model.stockfish.processbuilderstrategy;
 
 import model.Messagetype;
+import model.socket.SocketClient;
 import model.stockfish.SuperStrategy;
 
 import java.io.BufferedReader;
@@ -64,6 +65,10 @@ public class ClientThread extends SuperStrategy  {
 			}
 
 			stockfishProcess.update(new Messagetype("board", result));
+
+			// Send object - not working
+			//SocketClient client = new SocketClient("localhost", 5134);
+			//client.sendMove(move);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
