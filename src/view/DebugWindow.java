@@ -20,7 +20,7 @@ public class DebugWindow extends JFrame implements Observer {
 		setTitle(title);
 		add(new JScrollPane(p));
 		setLocation(200 + (++count * W), 40);
-		setSize(W,400);
+		setSize(W,300);
 		setVisible(true);
 		p.setContentType("HTML/plain");
 	}
@@ -41,5 +41,4 @@ public class DebugWindow extends JFrame implements Observer {
 		write(" #" + ++messagecount + " " + m.getType());
 		write(m.getMsg() + "\n --------------");		
 	}
-	
 }
