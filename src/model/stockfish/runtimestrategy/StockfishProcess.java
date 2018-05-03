@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.util.Observable;
 
 public class StockfishProcess extends Observable implements IConfiguration {
-	
 	private static String processFilename = PROCESS_FILE_LOCATION_ON_THE_DESKTOP;
 	private ClientThread client;
 		

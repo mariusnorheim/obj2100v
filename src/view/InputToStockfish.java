@@ -13,7 +13,7 @@ public class InputToStockfish extends JFrame {
 	private Inputpane inputpane;
 
 	public InputToStockfish() {
-		setTitle("input to engine");
+		setTitle("stockfish input");
 		add(new JScrollPane(inputpane = new Inputpane()));
 		add(new JButton(new AbstractAction("stop") {
 			

@@ -23,7 +23,7 @@ public class Inputpane extends JTextPane {
 	private PrintWriter pw;
 
 	public Inputpane() {
-		DebugWindow responses = new DebugWindow("responses");
+		DebugWindow responses = new DebugWindow("stockfish output");
 		try {
 			PipedWriter pipedwriter;
 			BufferedReader reader = new BufferedReader(new PipedReader(pipedwriter = new PipedWriter()) );
