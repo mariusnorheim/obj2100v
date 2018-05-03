@@ -2,10 +2,14 @@ package controller;
 
 public class PointToFen {	
 	
+	private String fenX = "";
+	private String fenY = "";
+	private String fen = fenX + fenY;
+	private String fenFra = "";
+	private String fenTil = "";
+	
 	public String setPointToFen(int x, int y) {
-		
-    	String fenX = "";
-    	
+
 		switch (x) {
 			case 0:
 				fenX = "a";
@@ -35,7 +39,6 @@ public class PointToFen {
 				fenX = "";					
 		}
 		
-		String fenY = "";
 		switch (y) {
 			case 0:
 				fenY = "8";
@@ -64,12 +67,26 @@ public class PointToFen {
 			default:
 				fenY = "";					
 		}
-		
-		String fen = fenX + fenY;
-		System.out.print(fen);
-		
 		return fen;
-		
+	}
+	
+	// SETTERS 
+	public void setFenFra(String fenFra) {
+		this.fenFra = fenFra;
+	}
+	
+	public void setFenTil(String fenTil) {
+		this.fenTil = fenTil;
+	}
+	
+	// GETTERS
+	public String getFenFra() {
+		return fenFra;
+	}
+	
+	public String getFenTil() {
+		return fenTil;
 	}
 	
 }
+
