@@ -1,9 +1,9 @@
 package model;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
 
-public class Messagetype {
-	
+public class Messagetype implements Serializable {
 	private String mtype, msg;
 
 	public String getMsg() {
@@ -25,7 +25,4 @@ public class Messagetype {
 		this.mtype = mtype;
 		this.msg = msg;
 	}
-
-	
-
 }

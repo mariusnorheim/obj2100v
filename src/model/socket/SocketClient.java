@@ -1,13 +1,17 @@
 package model.socket;
 
+import model.Messagetype;
+
 import java.io.*;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class SocketClient implements Runnable {
     private String host;
     private int port;
     private Socket socket;
     private ObjectOutputStream oos;
+    private ObjectInputStream ois;
 
     public SocketClient(String host, int port) {
         this.host = host;
@@ -19,18 +23,19 @@ public class SocketClient implements Runnable {
         try {
             // Create the socket
             this.socket = new Socket(host, port);
-            // Create output stream to the server
+            // Create output and input stream to the server
             this.oos = new ObjectOutputStream(socket.getOutputStream());
+            this.ois = new ObjectInputStream(socket.getInputStream());
         } catch(IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void newMove(String move) {
+    public void sendMove(String newmove) {
         try {
             // Send object to server
-            SocketMessage msg = new SocketMessage("move", move);
-            oos.writeObject(msg);
+            Messagetype msg = new Messagetype("move", newmove);
+            this.oos.writeObject(msg);
         } catch(IOException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,7 @@
 package model.socket;
 
+import model.Messagetype;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -8,6 +10,7 @@ public class SocketServer implements Runnable {
     private int port;
     private ServerSocket serverSocket;
     private Socket clientSocket;
+    private ObjectOutputStream oos;
     private ObjectInputStream ois;
 
     public SocketServer(int port) {
@@ -19,18 +22,29 @@ public class SocketServer implements Runnable {
         try {
             // Create the server socket
             this.serverSocket = new ServerSocket(this.port);
-            // Create the client socket
-            this.clientSocket = serverSocket.accept();
-            System.out.println("Network server socket up");
-            // Create input stream to the client
-            this.ois = new ObjectInputStream(clientSocket.getInputStream());
 
             while(true) {
-                SocketMessage msg = (SocketMessage) ois.readObject();
-                String newmove = msg.getMessage();
-                System.out.println("New move is: " + newmove);
-                // TODO: Pass move to swordfish
+                // Create the client socket
+                this.clientSocket = serverSocket.accept();
+                System.out.println("Network server socket up");
+
+                // Create output and input stream to the client
+                this.ois = new ObjectInputStream(clientSocket.getInputStream());
+                this.oos = new ObjectOutputStream(clientSocket.getOutputStream());
+
+                this.getMove();
             }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getMove() {
+        try {
+            // Read object from server
+            Messagetype msg = (Messagetype) this.ois.readObject();
+            String move = msg.getMsg();
+            System.out.println("New move is: " + move);
         } catch(IOException e) {
             e.printStackTrace();
         } catch(ClassNotFoundException e) {

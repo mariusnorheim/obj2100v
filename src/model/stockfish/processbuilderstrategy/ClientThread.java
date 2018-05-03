@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class ClientThread  extends SuperStrategy {
+public class ClientThread extends SuperStrategy {
 
 	private StockfishProcess stockfishProcess;
 
